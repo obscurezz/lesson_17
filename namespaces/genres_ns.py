@@ -10,8 +10,14 @@ genre_schema = GenreSchema()
 
 @genres_api.route('/<int:gid>')
 class GenreView(Resource):
+    """
+    POST: implements POST-method to add new object to database
+    PUT: implements PUT-method to fully update object in database
+    DELETE: implements DELETE-method to delete object from database
+    """
     @staticmethod
     def post():
+        # response body of request
         json_request: dict = request.json
         new_genre = Genre(**json_request)
 
@@ -24,6 +30,7 @@ class GenreView(Resource):
 
     @staticmethod
     def put(did: int):
+        # response body of request
         json_request: dict = request.json
         exact_genre = db.session.query(Genre).get(did)
 
