@@ -9,3 +9,8 @@ class DevelopmentConfig(object):
     JSON_AS_ASCII = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = "sqlite:///test.db"
+
+
+class PaginationConfig(object):
+    PAGE = 1
+    PER_PAGE = 3
